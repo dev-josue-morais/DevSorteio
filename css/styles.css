@@ -4,7 +4,9 @@
     box-sizing: border-box;
     font-family: "Roboto", serif;
 }
-body, html {
+
+body,
+html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -18,8 +20,7 @@ body, html {
 .background {
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(circle, rgba(100, 0, 0, 1), rgba(150, 40, 0, 1), rgba(100, 100, 0, 1), rgba(0, 58, 0, 1), rgb(0, 99, 58), rgba(0, 0, 122, 1), rgba(60, 0, 60, 1));
-
+    animation: pulseGradient 50s infinite linear;
 }
 
 main {
