@@ -1,14 +1,59 @@
-const numberFron = document.querySelector("#start");
+const numberFrom = document.querySelector("#start");
 const numberTo = document.querySelector("#end");
 const button = document.querySelector("button");
 
-button.addEventListener("click", function() {
-    console.log(numberFron.value);
-    console.log(numberTo.value);
+button.disabled = true; // Desabilitar o botão inicialmente
+
+// Função para verificar se os dois números estão válidos
+function validateInputs() {
+    const fromValue = parseInt(numberFrom.value);
+    const toValue = parseInt(numberTo.value);
+    
+    // Ativar o botão apenas se 'numberFrom' for menor que 'numberTo' e ambos forem válidos
+    if (numberFrom.value !== "" && numberTo.value !== "" && fromValue < toValue) {
+        button.disabled = false;
+    } else {
+        button.disabled = true;
+    }
+}
+
+// Adicionar eventos de input para verificar a validade dos números
+numberFrom.addEventListener("input", function() {
+    // Se o valor de 'numberFrom' não estiver vazio, habilita o campo 'numberTo'
+    if (numberFrom.value !== "") {
+        numberTo.disabled = false;
+
+        // Se o valor de 'numberFrom' for alterado, resetar o campo 'numberTo'
+        numberTo.value = "";
+    } else {
+        numberTo.disabled = true; // Desabilita 'numberTo' se 'numberFrom' estiver vazio
+        numberTo.value = ""; // Limpa o valor de 'numberTo'
+    }
+
+    validateInputs(); // Verificar se os inputs estão válidos
 });
 
-let randomInt = Math.floor(Math.random() * 11); 
-console.log(randomInt);
+numberTo.addEventListener("input", function() {
+    // Se 'numberTo' for menor ou igual a 'numberFrom', limpar o valor de 'numberTo'
+    if (parseInt(numberTo.value) <= parseInt(numberFrom.value) && numberTo.value !== "") {
+        numberTo.setCustomValidity("O valor de 'to' deve ser maior que o valor de 'from'");
+    } else {
+        numberTo.setCustomValidity(""); // Limpa qualquer erro de validação
+    }
+
+    validateInputs(); // Verificar se os inputs estão válidos
+});
+
+// Evento de clique para gerar o número aleatório
+button.addEventListener("click", function() {
+    const fromValue = parseInt(numberFrom.value);
+    const toValue = parseInt(numberTo.value);
+
+    // Gerar o número aleatório entre 'from' e 'to'
+    let randomInt = Math.floor(Math.random() * (toValue - fromValue + 1)) + fromValue;
+    alert(`Número sorteado: ${randomInt}`);
+});
+
 
 function generateKeyframes() {
     const colors = [];
@@ -49,5 +94,5 @@ function generateKeyframes() {
     keyframes += "}";
     const styleSheet = document.styleSheets[0];
     styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
-    document.querySelector('.background').style.animation = 'pulseGradient 15s infinite linear';
+    document.querySelector('.background').style.animation = 'pulseGradient 10s infinite linear';
 } generateKeyframes();
