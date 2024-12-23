@@ -47,7 +47,7 @@ button.addEventListener("click", function() {
 
 
 function generateKeyframes() {
-    const nColors = 3;
+    const nColors = 1;
     const colors = [];
 
     // Gerar 250 cores interpolando de rgb(255, 0, 0) para rgb(255, 165, 0)
