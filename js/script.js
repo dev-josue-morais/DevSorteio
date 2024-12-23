@@ -47,29 +47,62 @@ button.addEventListener("click", function() {
 
 
 function generateKeyframes() {
+    const nColors = 80;
     const colors = [];
 
-    // Gerar 250 cores interpolando de vermelho (#ff0000) para verde (#00ff00)
-    for (let i = 0; i < 250; i++) {
-        let r = 255 - Math.round(i * 255 / 255);
-        let g = Math.round(i * 255 / 255);
+    // Gerar 250 cores interpolando de rgb(255, 0, 0) para rgb(255, 165, 0)
+    for (let i = 0; i < nColors; i++) {
+        let r = 255;
+        let g = Math.round(i * 165 / (nColors - 1));
         let b = 0;
         colors.push(`rgba(${r}, ${g}, ${b}, 0.5)`);
     }
 
-    // Gerar 250 cores interpolando de verde (#00ff00) para azul (#0000ff)
-    for (let i = 0; i < 250; i++) {
-        let r = 0;
-        let g = 255 - Math.round(i * 255 / 255);
-        let b = Math.round(i * 255 / 255);
+    // Gerar cores interpolando de rgb(255, 165, 0) para rgb(255, 255, 0)
+    for (let i = 0; i < nColors; i++) {
+        let r = 255;
+        let g = 165 + Math.round(i * 90 / (nColors - 1));
+        let b = 0;
         colors.push(`rgba(${r}, ${g}, ${b}, 0.5)`);
     }
 
-    // Gerar 250 cores interpolando de azul (#0000ff) para vermelho (#ff0000)
-    for (let i = 0; i < 250; i++) {
-        let r = Math.round(i * 255 / 255);
+    // Gerar cores interpolando de rgb(255, 255, 0) para rgb(0, 255, 0)
+    for (let i = 0; i < nColors; i++) {
+        let r = 255 - Math.round(i * 255 / (nColors - 1));
+        let g = 255;
+        let b = 0;
+        colors.push(`rgba(${r}, ${g}, ${b}, 0.5)`);
+    }
+
+    // Gerar cores interpolando de rgb(0, 255, 0) para rgb(0, 0, 255)
+    for (let i = 0; i < nColors; i++) {
+        let r = 0;
+        let g = 255 - Math.round(i * 255 / (nColors - 1));
+        let b = Math.round(i * 255 / (nColors - 1));
+        colors.push(`rgba(${r}, ${g}, ${b}, 0.5)`);
+    }
+
+    // Gerar cores interpolando de rgb(0, 0, 255) para rgb(75, 0, 130)
+    for (let i = 0; i < nColors; i++) {
+        let r = Math.round(i * 75 / (nColors - 1));
         let g = 0;
-        let b = 255 - Math.round(i * 255 / 255);
+        let b = 255 - Math.round(i * 125 / (nColors - 1));
+        colors.push(`rgba(${r}, ${g}, ${b}, 0.5)`);
+    }
+
+    // Gerar cores interpolando de rgb(75, 0, 130) para rgb(238, 130, 238)
+    for (let i = 0; i < nColors; i++) {
+        let r = 75 + Math.round(i * 163 / (nColors - 1));
+        let g = Math.round(i * 130 / (nColors - 1));
+        let b = 130 + Math.round(i * 108 / (nColors - 1));
+        colors.push(`rgba(${r}, ${g}, ${b}, 0.5)`);
+    }
+
+    // Gerar cores interpolando de rgb(238, 130, 238) para rgb(255, 0, 0)
+    for (let i = 0; i < nColors; i++) {
+        let r = 238 + Math.round(i * 17 / (nColors - 1));
+        let g = 130 - Math.round(i * 130 / (nColors - 1));
+        let b = 238 - Math.round(i * 238 / (nColors - 1));
         colors.push(`rgba(${r}, ${g}, ${b}, 0.5)`);
     }
 
@@ -90,5 +123,5 @@ function generateKeyframes() {
     const styleSheet = document.styleSheets[0];
     styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
 
-    document.querySelector('.background').style.animation = 'pulseGradient 50s infinite linear';
+    document.querySelector('.background').style.animation = 'pulseGradient 15s infinite linear';
 } generateKeyframes();
