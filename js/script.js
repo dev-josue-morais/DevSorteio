@@ -47,7 +47,7 @@ button.addEventListener("click", function() {
 
 
 function generateKeyframes() {
-    const nColors = 1;
+    const nColors = 80;
     const colors = [];
 
     // Gerar 250 cores interpolando de rgb(255, 0, 0) para rgb(255, 165, 0)
@@ -123,5 +123,5 @@ function generateKeyframes() {
     const styleSheet = document.styleSheets[0];
     styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
 
-    document.querySelector('.background').style.animation = 'pulseGradient 5s infinite linear';
+    document.querySelector('.background').style.animation = 'pulseGradient 15s infinite linear';
 } generateKeyframes();
