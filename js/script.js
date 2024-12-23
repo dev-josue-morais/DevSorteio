@@ -50,7 +50,7 @@ function generateKeyframes() {
     const nColors = 80;
     const colors = [];
 
-    // Gerar 250 cores interpolando de rgb(255, 0, 0) para rgb(255, 165, 0)
+    // Gerar cores interpolando de rgb(255, 0, 0) para rgb(255, 165, 0)
     for (let i = 0; i < nColors; i++) {
         let r = 255;
         let g = Math.round(i * 165 / (nColors - 1));
