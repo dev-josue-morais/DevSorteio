@@ -123,5 +123,5 @@ function generateKeyframes() {
     const styleSheet = document.styleSheets[0];
     styleSheet.insertRule(keyframes, styleSheet.cssRules.length);
 
-    document.querySelector('.background').style.animation = 'pulseGradient 15s infinite linear';
+    document.querySelector('.background').style.animation = 'pulseGradient 5s infinite linear';
 } generateKeyframes();
