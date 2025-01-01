@@ -16,7 +16,7 @@
 ## 🎥 Demonstração
 
 Acesse a página de demonstração clicando no link abaixo:  
-[DevSorteio - Demonstração](https://josue28jrd.github.io/DevSorteio/)
+[DevSorteio - Demonstração](https://dev-josue-morais.github.io/DevSorteio/)
 
 ---
 
@@ -43,6 +43,6 @@ Acesse a página de demonstração clicando no link abaixo:
 ## 👨‍💻 Sobre o Desenvolvedor
 
 Este projeto foi implementado por **Josué Rodrigues** como parte de um aprendizado no **[DevClub](https://rodolfomori.com.br/)**.  
-📩 Entre em contato comigo no [LinkedIn](https://www.linkedin.com/in/josuemorais).  
+📩 Entre em contato comigo no [LinkedIn](https://www.linkedin.com/in/dev-josue-morais).  
 
 Estou em busca de oportunidades como **desenvolvedor front-end** para contribuir com soluções criativas e funcionais. Vamos conversar? 🚀
